@@ -17,3 +17,16 @@
     margin:0;
     
  }
+ .logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 20rem;
+    height: 5rem;
+    background-color:#46e796;
+    color:black;
+    font-weight: bold;
+    font-size: 1rem;
+    margin:0;
+    padding: 0;
+}
