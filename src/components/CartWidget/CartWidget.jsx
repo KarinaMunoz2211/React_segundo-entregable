@@ -1,7 +1,7 @@
-import './Cart.css';
+import './CartWidget.css';
 
-function Cart(){
-    return(
+function CartWidget(){
+        return(
         <div>
             <p className="cart-bckg">
 
@@ -12,4 +12,4 @@ function Cart(){
     );
 };
 
-export default Cart
+export default CartWidget

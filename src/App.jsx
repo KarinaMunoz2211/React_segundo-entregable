@@ -1,7 +1,7 @@
 import './App.css';
 import Navbar from './components/Navbar/Navbar.jsx';
 import Logo from './components/Logo/Logo';
-import Cart from './components/Cart/Cart';
+import CartWidget from './components/CartWidget/CartWidget.jsx';
 
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
     <Logo/>
     <Navbar/>
-    <Cart/>
+    <CartWidget/>
     </>
   );
 };
