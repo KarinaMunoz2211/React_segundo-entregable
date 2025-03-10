@@ -1,0 +1,9 @@
+.cart-bckg{
+    display: flex;
+    align-items: center;
+    margin:0;
+    width: 100%;
+    height: 5rem;
+    background-color:#46e796;
+    color:black;
+}
