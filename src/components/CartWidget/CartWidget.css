@@ -1,8 +1,9 @@
 .cart-bckg{
     display: flex;
     align-items: center;
+    justify-content: space-around;
     margin:0;
-    width: 100%;
+    width: 20rem;
     height: 5rem;
     background-color:#46e796;
     color:black;

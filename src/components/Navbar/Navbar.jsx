@@ -1,3 +1,4 @@
+import CartWidget from '../CartWidget/CartWidget';
 import './Navbar.css';
 
 function Navbar(){
@@ -10,7 +11,7 @@ function Navbar(){
         <li>Productos</li>
         <li>Contacto</li>
         </ul>
-  {/* Aca va el CartWidget*/} 
+        <CartWidget/>
       </nav>
     </header>
   );
