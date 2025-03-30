@@ -1,17 +1,24 @@
 import { useEffect } from 'react';
 import './ItemListContainer.css';
 import { products } from '../Products';
+import Item from '../Item/Item';
 
-function ItemListContainer({karySayHi}) {
+function ItemListContainer() {
 
-  useEffect(() => {
-    console.log("lista de productos",products);
-  },[] );
+ /* useEffect(() => {
+    console.log("lista de productos", products);
+  },[] );*/
 
   return (
-    <>
-    <h1 className="greetings">{karySayHi}</h1>
-    </>
+    <div className="container-products">
+      {
+        products.map(el => {
+          return(
+           <Item key={el.id} product={el}/>
+          )
+        })
+      }
+    </div>
   );
 };
 
