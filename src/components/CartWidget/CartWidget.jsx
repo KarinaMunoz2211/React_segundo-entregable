@@ -2,7 +2,7 @@ import './CartWidget.css';
 
 function CartWidget(){
         return(
-            <p className="cart-bckg"> Acá figura el Carrito</p>
+            <p className="cart-bckg"> 🛒 (2)</p>
     );
 };
 

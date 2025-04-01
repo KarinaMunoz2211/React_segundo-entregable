@@ -2,14 +2,14 @@ import './Item.css';
 
 function Item({product}){
 
-    const {tittle, price, stock}= product
+    const {title, price, stock}= product
 
     return (
-        <div>
-            <h4>{tittle}</h4>
-            <h6>${price}</h6>
+        <div className="card p-3">
+            <h4 className='card-header'>{title}</h4>
+            <h6 className='card-text p-2'>${price}</h6>
             <p>Quedan {stock} disponibles</p>
-            <button>Agregar al carrito</button>
+            <button className='btn btn-primary'>Agregar al carrito</button>
         </div>
     );
 };
