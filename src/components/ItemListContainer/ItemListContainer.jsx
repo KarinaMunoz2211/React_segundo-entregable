@@ -4,10 +4,13 @@ import Item from '../Item/Item';
 import Loader from '../Loader/Loader';
 import { fetchData } from '../../fetchData';
 
+
 function ItemListContainer() {
 
   const [loader, setLoading] = useState(true);;
   const [allProducts, setAllProducts] = useState(null)
+
+  const [choosenProduct, setChoosenProduct] = useState(null)
 
   useEffect(() => {
 
@@ -18,9 +21,7 @@ function ItemListContainer() {
       setLoading(false);
     })
     .catch(err => console.error(err))
-
   },[])
-
   
   return (
     <div className="container-products">
@@ -33,6 +34,12 @@ function ItemListContainer() {
            <Item key={el.id} product={el}/>
           );
         })
+      }
+
+      {
+        choosenProduct &&
+        <Item producto={choosenProduct}/>
+        
       }
     </div>
   );
