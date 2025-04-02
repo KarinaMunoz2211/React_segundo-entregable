@@ -1,9 +1,7 @@
   import { products } from "./Products";
 
-export const fetchData =(data) => new Promise ((resolve, reject) =>{
-    if(data){
-        resolve("Hello");
-    } else {
-        reject ("Goodbye");
-    };
-  });
+export const fetchData =() => new Promise ((resolve, reject) =>{
+  setTimeout(() => {
+    resolve(products);
+  },1500 );
+});

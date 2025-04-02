@@ -1,22 +1,24 @@
 import { useEffect, useState} from 'react';
 import './ItemListContainer.css';
-import { products } from '../../Products'
 import Item from '../Item/Item';
 import Loader from '../Loader/Loader';
 import { fetchData } from '../../fetchData';
 
 function ItemListContainer() {
 
-  const [loader, setLoading] = useState(true);
+  const [loader, setLoading] = useState(true);;
+  const [allProducts, setAllProducts] = useState(null)
 
   useEffect(() => {
+
     fetchData(true)
-    .then(response => console.log(response))
+    .then(response => {
+      setAllProducts(response);
+      console.log(response);
+      setLoading(false);
+    })
     .catch(err => console.error(err))
 
-    setTimeout(() => {
-      setLoading(false);
-    },1500);
   },[])
 
   
@@ -26,10 +28,10 @@ function ItemListContainer() {
         loader ? 
         <Loader/> 
         :
-        products.map(el => {
+        allProducts.map(el => {
           return(
            <Item key={el.id} product={el}/>
-          )
+          );
         })
       }
     </div>
