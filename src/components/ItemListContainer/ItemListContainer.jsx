@@ -3,6 +3,7 @@ import './ItemListContainer.css';
 import Item from '../Item/Item';
 import Loader from '../Loader/Loader';
 import { fetchData } from '../../fetchData';
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 
 function ItemListContainer() {
@@ -37,9 +38,7 @@ function ItemListContainer() {
       }
 
       {
-        choosenProduct &&
-        <Item producto={choosenProduct}/>
-        
+        choosenProduct && <ItemDetail product={choosenProduct}/>
       }
     </div>
   );
