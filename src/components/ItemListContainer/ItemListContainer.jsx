@@ -11,40 +11,34 @@ function ItemListContainer() {
   const [loader, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState(null)
 
-  const [choosenProduct, setChoosenProduct] = useState(
-    {id: 3,
-    title: "Marcapáginas Perro",
-    price: 2500,
-    category: "Escritorio",
-    stock:25,
-    description: "Marcapágina de Metal con forma de perro salchicha",
-  });
+  const [choosenProduct, setChoosenProduct] = useState(null);
 
   useEffect(() => {
 
     fetchData(true)
     .then(response => {
       setAllProducts(response);
-      console.log(response);
-      setLoading(false);
+      setTimeout(()=> {
+        console.log(response);
+        setLoading(false);
+      },500);
+      
     })
     .catch(err => console.error(err))
   },[])
   
   return (
+    loader ? 
+    <Loader/> 
+    :
     <div>
 
       <div className="container-products">
-        {
-          loader ? 
-            <Loader/> 
-            :
-            allProducts.map(el => {
-              return(
-                <Item key={el.id} product={el}/>
+        {allProducts.map(el => {
+          return(
+            <Item key={el.id} product={el} chooseProduct = {setChoosenProduct}/>
               );
-            })
-        }
+          })}
       </div>
       {
         choosenProduct && <ItemDetail product={choosenProduct}/>
