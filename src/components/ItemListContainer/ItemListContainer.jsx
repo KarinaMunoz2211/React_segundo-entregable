@@ -7,7 +7,7 @@ import { fetchData } from '../../fetchData';
 
 function ItemListContainer() {
 
-  const [loader, setLoading] = useState(true);;
+  const [loader, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState(null)
 
   const [choosenProduct, setChoosenProduct] = useState(null)
