@@ -11,7 +11,14 @@ function ItemListContainer() {
   const [loader, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState(null)
 
-  const [choosenProduct, setChoosenProduct] = useState(null)
+  const [choosenProduct, setChoosenProduct] = useState(
+    {id: 3,
+    title: "Marcapáginas Perro",
+    price: 2500,
+    category: "Escritorio",
+    stock:25,
+    description: "Marcapágina de Metal con forma de perro salchicha",
+  });
 
   useEffect(() => {
 
@@ -25,18 +32,20 @@ function ItemListContainer() {
   },[])
   
   return (
-    <div className="container-products">
-      {
-        loader ? 
-        <Loader/> 
-        :
-        allProducts.map(el => {
-          return(
-           <Item key={el.id} product={el}/>
-          );
-        })
-      }
+    <div>
 
+      <div className="container-products">
+        {
+          loader ? 
+            <Loader/> 
+            :
+            allProducts.map(el => {
+              return(
+                <Item key={el.id} product={el}/>
+              );
+            })
+        }
+      </div>
       {
         choosenProduct && <ItemDetail product={choosenProduct}/>
       }
