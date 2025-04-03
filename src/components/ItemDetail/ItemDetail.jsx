@@ -1,6 +1,6 @@
 import './ItemDetail.css';
 
-function ItemDetail({product}){
+function ItemDetail({product,goToStart}){
 
     const {title, price,stock,category,description} = product;
 
@@ -14,7 +14,7 @@ function ItemDetail({product}){
                 <h6>Categoría: {category}</h6>
                 <h6>Descripción: {description}</h6>
                 <button className='btn btn-primary' onClick={() => console.log("Se agregó", product)}>Agregar al carrito</button>
-                <button className='btn btn-primary my-1' onClick={() => console.log("Volver al Inicio", product)}>Volver al Inicio</button>
+                <button className='btn btn-primary my-1' onClick={goToStart}>Volver al Inicio</button>
             </div>
         </div>
     );

@@ -41,7 +41,7 @@ function ItemListContainer() {
           })}
       </div>
       {
-        choosenProduct && <ItemDetail product={choosenProduct}/>
+        choosenProduct && <ItemDetail product={choosenProduct} goToStart={() => setChoosenProduct(null)}/>
       }
     </div>
   );
