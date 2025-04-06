@@ -4,7 +4,7 @@
         title: "Libreta con Puntos",
         price: 5000,
         category: "Cuadernos",
-        stock:20,
+        stock:10,
         description: "Libreta de tapa dura con puntos"
     },
     {
@@ -28,7 +28,7 @@
         title: "Cuaderno cuadriculado con flores",
         price: 5000,
         category: "Cuadernos",
-        stock:50,
+        stock:8,
         description: "Cuaderno con espiral diseño floreado"
     },
   /*  {

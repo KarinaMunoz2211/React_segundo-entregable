@@ -1,8 +1,7 @@
-import {useState} from 'react';
 import './ItemCount.css';
 
-function ItemCount ({stock}) {
-    const [count, setCount] = useState (1);
+function ItemCount ({stock, count, setCount}) {
+
 
     function modifyCount(operation){
         if (operation === "+") {

@@ -1,17 +1,20 @@
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
+import { useState } from 'react';
 
 function ItemDetail({product,goToStart}){
+
+    const [count, setCount] = useState (1);
 
     const {title, price,stock,category,description} = product;
 
     function addToCart(prod){
         const newProduct ={
             ...prod,
-            amount: 1,
+            amount: count,
         };
-
         console.log("Vas a agregar", newProduct);
+        setCount(1)
     };
 
     return (
@@ -24,7 +27,7 @@ function ItemDetail({product,goToStart}){
                 <h6>Categoría: {category}</h6>
                 <h6>Descripción: {description}</h6>
 
-                <ItemCount stock={stock}/>
+                <ItemCount stock={stock} count={count} setCount={setCount}/>
 
                 <button className='btn btn-primary' onClick={() => addToCart(product)}>Agregar al carrito</button>
                 <button className='btn btn-primary my-1' onClick={goToStart}>Volver al Inicio</button>
