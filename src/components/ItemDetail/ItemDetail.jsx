@@ -24,7 +24,7 @@ function ItemDetail({product,goToStart}){
                 <h6>Categoría: {category}</h6>
                 <h6>Descripción: {description}</h6>
 
-                <ItemCount/>
+                <ItemCount stock={stock}/>
 
                 <button className='btn btn-primary' onClick={() => addToCart(product)}>Agregar al carrito</button>
                 <button className='btn btn-primary my-1' onClick={goToStart}>Volver al Inicio</button>
