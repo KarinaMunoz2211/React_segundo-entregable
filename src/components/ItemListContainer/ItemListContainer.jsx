@@ -37,7 +37,7 @@ function ItemListContainer() {
         {allProducts.map(el => {
           return(
             <Item key={el.id} product={el} chooseProduct = {setChoosenProduct}/>
-              );
+              ); 
           })}
       </div>
       {
