@@ -1,10 +1,11 @@
 import {useState} from 'react';
 import './Item.css';
+import { Link } from 'react-router';
 
-function Item({product, chooseProduct}){
+function Item({product}){
 
 
-    const {title, price, stock}= product;
+    const {id, title, price, stock}= product;
     
     function addToCart(prod){
         const newProduct ={
@@ -21,7 +22,9 @@ function Item({product, chooseProduct}){
             <h6 className='card-text p-2'>${price}</h6>
             <p>Quedan {stock} disponibles</p>
             <button className='btn btn-primary' onClick={() => addToCart(product)}>Agregar al carrito</button>
-            <button className='btn btn-primary my-1' onClick={() => chooseProduct(product)>("Ver Detalle", product)}>Detalle del Producto</button>
+            <Link to={`/detalles/${id}`}>
+                <button className='btn btn-primary my-1'>Ver Detalle</button>
+            </Link>
         </div>
     );
 };

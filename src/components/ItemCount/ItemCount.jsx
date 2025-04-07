@@ -15,10 +15,6 @@ function ItemCount ({stock, count, setCount}) {
         };
     };
 
-//    function addToCart (){
-//        console.log(`Agregaste ${count} unidades`);
-//        setCount(1);
-//    };
 
     return (
         <div style ={{display:"flex",flexDirection:"column",padding:"1rem"}}>

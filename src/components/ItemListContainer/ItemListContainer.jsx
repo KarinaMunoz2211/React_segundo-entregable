@@ -3,7 +3,7 @@ import './ItemListContainer.css';
 import Item from '../Item/Item';
 import Loader from '../Loader/Loader';
 import { fetchData } from '../../fetchData';
-import ItemDetail from '../ItemDetail/ItemDetail';
+import { useParams } from 'react-router';
 
 
 function ItemListContainer() {
@@ -11,21 +11,20 @@ function ItemListContainer() {
   const [loader, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState(null)
 
-  const [choosenProduct, setChoosenProduct] = useState(null);
+  const {categoria} = useParams();
 
   useEffect(() => {
-
-    fetchData(true)
-    .then(response => {
-      setAllProducts(response);
-      setTimeout(()=> {
-        console.log(response);
-        setLoading(false);
-      },500);
-      
-    })
-    .catch(err => console.error(err))
-  },[])
+    if (!allProducts){
+      fetchData()
+      .then(response => {
+        setAllProducts(response);
+        setTimeout(()=> {
+          setLoading(false);
+        },500);
+      })
+      .catch(err => console.error(err));
+    };
+  },[categoria]);
   
   return (
     loader ? 
@@ -34,15 +33,25 @@ function ItemListContainer() {
     <div>
 
       <div className="container-products">
-        {allProducts.map(el => {
+        {
+        categoria ? 
+
+        allProducts.filter(el => el.categoria === categoria).map(el =>{
           return(
-            <Item key={el.id} product={el} chooseProduct = {setChoosenProduct}/>
+            <Item key={el.id} product={el} />
+              ); 
+          })
+
+        :
+        allProducts.map(el => {
+          return(
+            <Item key={el.id} product={el} />
               ); 
           })}
       </div>
-      {
+      {/*
         choosenProduct && <ItemDetail product={choosenProduct} goToStart={() => setChoosenProduct(null)}/>
-      }
+      */}
     </div>
   );
 };

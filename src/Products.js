@@ -31,7 +31,7 @@
         stock:8,
         description: "Cuaderno con espiral diseño floreado"
     },
-  /*  {
+    {
         id: 5,
         title: "Set de Notas Adhesivas",
         price: 5000,
@@ -46,5 +46,5 @@
         category: "Escritura",
         stock:20,
         description: "Caja de 6 cartuchos de tinta para Lamy Safari"
-    },*/
+    },
  ];
