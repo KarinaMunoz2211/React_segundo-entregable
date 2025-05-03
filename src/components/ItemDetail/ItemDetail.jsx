@@ -10,7 +10,7 @@ function ItemDetail(){
     const {id}= useParams ();
 
     const [loader,setLoading] = useState(true);
-    const [product, setProduct] = useState(null);
+    const [product, setProduct] = useState(null); 
     const [count, setCount] = useState (1);
     
     function addToCart(prod){

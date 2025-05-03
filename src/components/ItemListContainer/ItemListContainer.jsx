@@ -11,10 +11,13 @@ function ItemListContainer() {
   const [loader, setLoading] = useState(true);
   const [allProducts, setAllProducts] = useState(null)
 
-  const {categoria} = useParams();
+  const {category} = useParams();
 
   useEffect(() => {
-    if (!allProducts){
+    if(allProducts){
+      console.log("ya cargaste items");
+    } else {
+      console.log("Trayendo Items");
       fetchData()
       .then(response => {
         setAllProducts(response);
@@ -23,25 +26,22 @@ function ItemListContainer() {
         },500);
       })
       .catch(err => console.error(err));
-    };
-  },[categoria]);
+    }
+  },[category]);
   
   return (
     loader ? 
     <Loader/> 
     :
     <div>
-
       <div className="container-products">
         {
-        categoria ? 
-
-        allProducts.filter(el => el.categoria === categoria).map(el =>{
+        category ? 
+        allProducts.filter(el => el.category === category ).map(el => {
           return(
             <Item key={el.id} product={el} />
               ); 
           })
-
         :
         allProducts.map(el => {
           return(
@@ -49,9 +49,6 @@ function ItemListContainer() {
               ); 
           })}
       </div>
-      {/*
-        choosenProduct && <ItemDetail product={choosenProduct} goToStart={() => setChoosenProduct(null)}/>
-      */}
     </div>
   );
 };

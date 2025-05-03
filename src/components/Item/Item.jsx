@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import './Item.css';
 import { Link } from 'react-router';
 
@@ -20,9 +19,9 @@ function Item({product}){
         <div className="card p-3">
             <h4 className='card-header'>{title}</h4>
             <h6 className='card-text p-2'>${price}</h6>
-            <p>Quedan {stock} disponibles</p>
-            <button className='btn btn-primary' onClick={() => addToCart(product)}>Agregar al carrito</button>
-            <Link to={`/detalles/${id}`}>
+            <p>Quedan {stock} disponibles</p>        
+           
+            <Link to={`/details/${id}`}>
                 <button className='btn btn-primary my-1'>Ver Detalle</button>
             </Link>
         </div>

@@ -17,10 +17,10 @@ function ItemCount ({stock, count, setCount}) {
 
 
     return (
-        <div style ={{display:"flex",flexDirection:"column",padding:"1rem"}}>
-            <div style ={{display:"flex",width:"10rem",padding:"2rem",justifyContent:"space-around",alignItems:"center"}}>
+        <div style ={{display:"flex",flexDirection:"column",padding:"1rem",backgroundColor:"white"}}>
+            <div style ={{display:"flex",width:"10rem",padding:"2rem",justifyContent:"space-around",backgroundColor:"white",alignItems:"center"}}>
                 <button className="btn btn-primary" onClick={() => modifyCount("-")}>-</button>
-                <p style={{backgroundColor:"#3BAC66",alignContent:"center",margin:"0"}}>{count}</p>
+                <p style={{backgroundColor:"white",alignContent:"center",margin:"0"}}>{count}</p>
                 <button className="btn btn-primary" onClick={() => modifyCount("+")}>+</button>
             </div>
 
