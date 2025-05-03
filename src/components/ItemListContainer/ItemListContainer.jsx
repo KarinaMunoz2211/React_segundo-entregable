@@ -14,9 +14,7 @@ function ItemListContainer() {
   const {category} = useParams();
 
   useEffect(() => {
-    if(allProducts){
-      console.log("ya cargaste items");
-    } else {
+    if(!allProducts){
       console.log("Trayendo Items");
       fetchData()
       .then(response => {
@@ -26,7 +24,7 @@ function ItemListContainer() {
         },500);
       })
       .catch(err => console.error(err));
-    }
+    };
   },[category]);
   
   return (
